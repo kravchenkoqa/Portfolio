@@ -1,1 +1,1 @@
-HI
+Hello, my name is Serhii and I am a beginner tester. This folder contains examples of my work that I did during the course.
