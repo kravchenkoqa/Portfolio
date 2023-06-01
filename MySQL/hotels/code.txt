@@ -1,0 +1,42 @@
+create database HotelsDB;
+use HotelsDB;
+
+create table Cities 
+(
+cityID int primary key not null auto_increment,
+cityName varchar (20)
+)
+cities
+create table Hotels
+(
+hotelId int primary key not null auto_increment,
+hotelName varchar(20),
+starsCounts int not null,
+creationDate date,
+cityID int,
+foreign key (cityID) references Cities (cityID)
+)
+
+create table Rooms
+(
+roomID int primary key not null auto_increment,
+comfortLevel varchar(20),
+hotelID int,
+foreign key (hotelID) references Hotels(hotelID)
+)
+
+create table Clients
+(
+clientID int primary key not null auto_increment,
+clientName varchar(50),
+clientNumber long
+)
+
+create table Orders
+(
+orderID int primary key not null auto_increment,
+clientID int,
+roomID int,
+foreign key (clientID) references Clients(clientID),
+foreign key (roomID) references Rooms(roomID)
+)
